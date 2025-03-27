@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --text-muted: #000000;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  * {
+    border: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  input, textarea, select {
+    @apply bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 shadow-sm rounded-md;
+  }
+
+  .light {
+    header {
+      @apply bg-white shadow-sm;
+      
+      .header-logo {
+        @apply text-black font-bold;
+      }
+      
+      nav a {
+        @apply text-black font-bold transition-all duration-200;
+      }
+      
+      nav a:hover {
+        @apply text-blue-600;
+      }
+      
+      button {
+        @apply transition-all duration-200;
+      }
+    }
+
+    .active-nav-link {
+      @apply bg-blue-50 text-blue-600 font-bold;
+    }
+
+    .glass-card {
+      @apply bg-white/90 shadow-md border border-gray-200;
+    }
+
+    h1, h2, h3, h4, h5 {
+      @apply text-black;
+    }
+
+    p {
+      @apply text-gray-800;
+    }
+
+    a {
+      @apply text-gray-900 hover:text-black;
+    }
+
+    input, textarea {
+      @apply text-black placeholder-gray-600 bg-white border border-gray-300 shadow-sm;
+    }
+
+    svg {
+      @apply text-gray-800;
+    }
+  }
+
+  .dark {
+    header {
+      @apply bg-gray-900 shadow-md;
+      
+      .active-nav-link {
+        @apply bg-blue-900/20 text-blue-400 font-bold;
+      }
+    }
+    
+    .glass-card {
+      @apply bg-gray-800/40 backdrop-blur-sm shadow-lg border border-gray-700/50;
+    }
+
+    .dropdown-item {
+      @apply bg-black text-white hover:bg-gray-800;
+    }
+  }
+}
+
+.smooth-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: smoothFade 0.8s ease forwards;
+}
+
+@keyframes smoothFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.language-progress-container {
+  position: relative;
+  padding-top: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.language-progress-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.language-progress-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.language-progress-container::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+}
+
+.language-item {
+  position: relative;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  margin-right: 20px;
+}
+
+.language-item:hover {
+  transform: translateY(-3px);
+}
+
+.language-name {
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.language-level {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .language-item {
+    min-width: 120px;
+  }
+}
+
+.header-button {
+  @apply flex items-center justify-center px-3 py-2 rounded-md transition-all duration-200;
+}
+
+.lang-button {
+  @apply header-button text-black dark:text-white;
+}
+
+.theme-button {
+  @apply header-button text-black dark:text-white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: visible;
+}
+
+.carousel-slide {
+  transition: transform 2s ease-in-out;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
