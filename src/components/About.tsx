@@ -28,9 +28,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
         development: "Development",
         developmentDetail: "Web & Industrial",
         experience: "Experience",
-        experienceDetail: "1 year",
+        experienceDetail: "-1 year",
         projects: "Projects",
-        projectsDetail: "+20 completed"
+        projectsDetail: "+8 completed"
       },
       es: {
         title: "Sobre Mí",
@@ -41,9 +41,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
         development: "Desarrollo",
         developmentDetail: "Web & Industrial",
         experience: "Experiencia",
-        experienceDetail: "1 año",
+        experienceDetail: "-1 año",
         projects: "Proyectos",
-        projectsDetail: "+20 completados"
+        projectsDetail: "+8 completados"
       },
       fr: {
         title: "À Propos",
@@ -54,9 +54,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
         development: "Développement",
         developmentDetail: "Web & Industriel",
         experience: "Expérience",
-        experienceDetail: "1 an",
+        experienceDetail: "-1 an",
         projects: "Projets",
-        projectsDetail: "+20 complétés"
+        projectsDetail: "+8 complétés"
       },
       de: {
         title: "Über Mich",
@@ -67,9 +67,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
         development: "Entwicklung",
         developmentDetail: "Web & Industriell",
         experience: "Erfahrung",
-        experienceDetail: "1 Jahr",
+        experienceDetail: "-1 Jahr",
         projects: "Projekte",
-        projectsDetail: "+20 abgeschlossen"
+        projectsDetail: "+8 abgeschlossen"
       }
     };
     
