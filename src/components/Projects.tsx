@@ -64,7 +64,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'E-commerce specialized in sports equipment and training items, with integrated payment system, inventory management and order tracking.',
             icon: ShoppingBag,
-            image: '/images/project-store.png',
+            image: '/img/spartamArmory_img.png',
             demoUrl: 'https://shop-spartan-armory.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/shop-spartan-armory',
           },
@@ -73,7 +73,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Service tracking demo for Carretera Baterías Costa Rica, integrating Google Maps APIs for user management, order tracking, and service information.',
             icon: Building,
-            image: '/images/project-institutional.png',
+            image: '/img/battery_img.png',
             demoUrl: 'https://traking-2-arreglos-demo.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/traking-2-arreglos-demo',
           },
@@ -82,7 +82,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Rick and Morty platform using the updated API to display character status: alive, dead, or missing.',
             icon: Code,
-            image: '/images/project-store.png',
+            image: '/img/rick_morty_img.png',
             demoUrl: 'https://vercel.com/dark-masters-projects/rick-and-morty-api-n2-proyect',
             downloadUrl: 'https://github.com/Benavides-Renault/Rick-and-Morty-Api-n2-proyect',
           },
@@ -91,7 +91,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Multigenerational Pokédex using the Pokémon API, allowing users to explore, search and filter Pokémon from all available generations.',
             icon: Brain,
-            image: '/images/project-institutional.png',
+            image: '/img/pokemon_img.png',
             demoUrl: 'https://pokedex-orlando-vite.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Pokedex',
           },
@@ -134,7 +134,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'E-commerce especializado en equipamiento deportivo y artículos de entrenamiento, con sistema de pagos integrado, gestión de inventario y seguimiento de pedidos.',
             icon: ShoppingBag,
-            image: '/images/project-store.png',
+            image: '/img/spartamArmory_img.png',
             demoUrl: 'https://shop-spartan-armory.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/shop-spartan-armory',
           },
@@ -143,7 +143,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'SDemo de rastreo de servicio para Carretera Baterías Costa Rica, integrando APIs de Google Maps para manejo de usuarios, seguimiento de órdenes e información de servicios.',
             icon: Building,
-            image: '/images/project-institutional.png',
+            image: '/img/battery_img.png',
             demoUrl: 'https://traking-2-arreglos-demo.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/traking-2-arreglos-demo',
           },
@@ -152,7 +152,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Plataforma de Rick y Morty utilizando la API actualizada para mostrar el estado de los personajes: vivos, muertos o desaparecidos.',
             icon: Code,
-            image: '/images/project-store.png',
+            image: '/img/rick_morty_img.png',
             demoUrl: 'https://rick-and-morty-api-n2-proyect.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Rick-and-Morty-Api-n2-proyect',
           },
@@ -161,7 +161,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Pokédex multigeneracional utilizando la API de Pokémon, que permite explorar, buscar y filtrar Pokémon de todas las generaciones disponibles.',
             icon: Brain,
-            image: '/images/project-institutional.png',
+            image: '/img/pokemon_img.png',
             demoUrl: 'https://pokedex-orlando-vite.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Pokedex',
           },
@@ -204,7 +204,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               "E-commerce spécialisé dans l'équipement sportif et les articles d'entraînement, avec système de paiement intégré, gestion des stocks et suivi des commandes.",
             icon: ShoppingBag,
-            image: '/images/project-store.png',
+            image: '/img/spartamArmory_img.png',
             demoUrl: 'https://shop-spartan-armory.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/shop-spartan-armory',
           },
@@ -213,7 +213,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Démo de suivi de service pour Carretera Baterías Costa Rica, intégrant les APIs Google Maps pour la gestion des utilisateurs, le suivi des commandes et les informations sur les services.',
             icon: Building,
-            image: '/images/project-institutional.png',
+            image: '/img/battery_img.png',
             demoUrl: 'https://traking-2-arreglos-demo.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/traking-2-arreglos-demo',
           },
@@ -222,7 +222,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               "Plateforme Rick et Morty utilisant l'API mise à jour pour afficher l'état des personnages : vivants, morts ou disparus.",
             icon: Code,
-            image: '/images/project-store.png',
+            image: '/img/rick_morty_img.png',
             demoUrl: 'https://rick-and-morty-api-n2-proyect.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Rick-and-Morty-Api-n2-proyect',
           },
@@ -231,7 +231,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               "Pokédex multigénération utilisant l'API Pokémon, permettant aux utilisateurs d'explorer, rechercher et filtrer des Pokémon de toutes les générations disponibles.",
             icon: Brain,
-            image: '/images/project-institutional.png',
+            image: '/img/pokemon_img.png',
             demoUrl: 'https://pokedex-orlando-vite.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Pokedex',
           },
@@ -274,7 +274,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'E-Commerce spezialisiert auf Sportausrüstung und Trainingsartikel, mit integriertem Zahlungssystem, Bestandsverwaltung und Auftragsverfolgung.',
             icon: ShoppingBag,
-            image: '/images/project-store.png',
+            image: '/img/spartamArmory_img.png',
             demoUrl: 'https://shop-spartan-armory.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/shop-spartan-armory',
           },
@@ -283,7 +283,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Service-Tracking-Demo für Carretera Baterías Costa Rica, mit Integration von Google-Maps-APIs für Benutzerverwaltung, Auftragsverfolgung und Serviceinformationen.',
             icon: Building,
-            image: '/images/project-institutional.png',
+            image: '/img/battery_img.png',
             demoUrl: 'https://traking-2-arreglos-demo.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/traking-2-arreglos-demo',
           },
@@ -292,7 +292,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Rick-und-Morty-Plattform mit aktualisierter API zur Anzeige des Charakterstatus: lebendig, tot oder vermisst.',
             icon: Code,
-            image: '/images/project-store.png',
+            image: '/img/rick_morty_img.png',
             demoUrl: 'https://rick-and-morty-api-n2-proyect.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Rick-and-Morty-Api-n2-proyect',
           },
@@ -301,7 +301,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             description:
               'Multigenerationale Pokédex basierend auf der Pokémon-API, mit der Benutzer Pokémon aller verfügbaren Generationen durchsuchen, suchen und filtern können.',
             icon: Brain,
-            image: '/images/project-institutional.png',
+            image: '/img/pokemon_img.png',
             demoUrl: 'https://pokedex-orlando-vite.vercel.app/',
             downloadUrl: 'https://github.com/Benavides-Renault/Pokedex',
           },
