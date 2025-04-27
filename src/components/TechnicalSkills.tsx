@@ -1,16 +1,13 @@
-
 import { Code, Cpu, Atom, Brain, Workflow } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-interface TechnicalSkillsProps {
-  language: string;
-}
+const TechnicalSkills = ({ language }) => {
+  const [activeCard, setActiveCard] = useState(null);
 
-const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-
-  const handleCardHover = (index: number) => {
+  const handleCardHover = (index) => {
     setActiveCard(index);
   };
 
@@ -18,7 +15,7 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
     setActiveCard(null);
   };
 
-  const getLanguageContent = (lang: string) => {
+  const getLanguageContent = (lang) => {
     const content = {
       en: {
         title: "Technical Skills",
@@ -26,8 +23,8 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
           {
             icon: <Code className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
             title: "Web Development",
-            tech: "JavaScript • HTML • CSS • React",
-            description: "Experience in modern web application development using the latest technologies. Specialized in React and its ecosystem, creating interactive and responsive interfaces. Mastery of modern JavaScript and its frameworks."
+            tech: "JavaScript • HTML • CSS • React • Next.js",
+            description: "Experience in modern web application development using the latest technologies. Specialized in React and Next.js ecosystems, creating interactive and responsive interfaces. Mastery of modern JavaScript and its frameworks."
           },
           {
             icon: <Brain className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
@@ -61,8 +58,8 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
           {
             icon: <Code className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
             title: "Desarrollo Web",
-            tech: "JavaScript • HTML • CSS • React",
-            description: "Experiencia en desarrollo de aplicaciones web modernas utilizando las últimas tecnologías. Especializado en React y su ecosistema, creando interfaces interactivas y responsivas. Dominio de JavaScript moderno y sus frameworks."
+            tech: "JavaScript • HTML • CSS • React • Next.js",
+            description: "Experiencia en desarrollo de aplicaciones web modernas utilizando las últimas tecnologías. Especializado en React y Next.js, creando interfaces interactivas y responsivas. Dominio de JavaScript moderno y sus frameworks."
           },
           {
             icon: <Brain className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
@@ -96,8 +93,8 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
           {
             icon: <Code className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
             title: "Développement Web",
-            tech: "JavaScript • HTML • CSS • React",
-            description: "Expérience dans le développement d'applications web modernes utilisant les dernières technologies. Spécialisé dans React et son écosystème, créant des interfaces interactives et réactives. Maîtrise du JavaScript moderne et de ses frameworks."
+            tech: "JavaScript • HTML • CSS • React • Next.js",
+            description: "Expérience dans le développement d'applications web modernes utilisant les dernières technologies. Spécialisé dans React et Next.js, créant des interfaces interactives et réactives. Maîtrise du JavaScript moderne et de ses frameworks."
           },
           {
             icon: <Brain className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
@@ -131,8 +128,8 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
           {
             icon: <Code className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
             title: "Web-Entwicklung",
-            tech: "JavaScript • HTML • CSS • React",
-            description: "Erfahrung in der Entwicklung moderner Webanwendungen mit den neuesten Technologien. Spezialisiert auf React und sein Ökosystem, Erstellung interaktiver und responsiver Benutzeroberflächen. Beherrschung von modernem JavaScript und seinen Frameworks."
+            tech: "JavaScript • HTML • CSS • React • Next.js",
+            description: "Erfahrung in der Entwicklung moderner Webanwendungen mit den neuesten Technologien. Spezialisiert auf React und Next.js, Erstellung interaktiver und responsiver Benutzeroberflächen. Beherrschung von modernem JavaScript und seinen Frameworks."
           },
           {
             icon: <Brain className="w-8 h-8 mr-4 text-black dark:text-white transition-all duration-300" />,
@@ -162,7 +159,7 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
       }
     };
     
-    return content[lang as keyof typeof content] || content.es;
+    return content[lang] || content.es;
   };
   
   const content = getLanguageContent(language);
@@ -172,52 +169,73 @@ const TechnicalSkills = ({ language }: TechnicalSkillsProps) => {
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         {content.title}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {content.skills.map((skill, index) => (
-          <div 
-            key={index}
-            className={cn(
-              "glass-card p-8 smooth-fade skill-card cursor-pointer transition-all duration-500",
-              activeCard === index ? "transform scale-105 shadow-xl z-10" : ""
-            )}
-            onMouseEnter={() => handleCardHover(index)}
-            onMouseLeave={handleCardLeave}
-            onTouchStart={() => handleCardHover(index)}
-            onTouchEnd={handleCardLeave}
-          >
-            <div className={cn(
-              "flex items-center mb-6 transition-all duration-500",
-              activeCard === index ? "transform scale-110" : ""
-            )}>
-              <div className={cn(
-                "transition-all duration-500",
-                activeCard === index ? "transform scale-125" : ""
-              )}>
-                {skill.icon}
-              </div>
-              <h3 className={cn(
-                "text-2xl font-semibold text-black dark:text-white transition-all duration-500",
-                activeCard === index ? "text-3xl" : ""
-              )}>
-                {skill.title}
-              </h3>
-            </div>
-            <div className="space-y-4">
-              <p className={cn(
-                "text-lg text-black dark:text-gray-400 transition-all duration-500",
-                activeCard === index ? "text-xl font-medium" : ""
-              )}>
-                {skill.tech}
-              </p>
-              <p className={cn(
-                "text-gray-800 dark:text-gray-400 transition-all duration-500",
-                activeCard === index ? "text-lg leading-relaxed" : ""
-              )}>
-                {skill.description}
-              </p>
-            </div>
-          </div>
-        ))}
+      
+      <div className="relative">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            skipSnaps: false,
+            slidesToScroll: 1
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent>
+            {content.skills.map((skill, index) => (
+              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4">
+                <div 
+                  className={cn(
+                    "glass-card p-8 smooth-fade skill-card cursor-pointer transition-all duration-500 h-full rounded-xl",
+                    activeCard === index ? "transform scale-105 shadow-xl z-10" : ""
+                  )}
+                  onMouseEnter={() => handleCardHover(index)}
+                  onMouseLeave={handleCardLeave}
+                  onTouchStart={() => handleCardHover(index)}
+                  onTouchEnd={handleCardLeave}
+                >
+                  <div className={cn(
+                    "flex items-center mb-6 transition-all duration-500",
+                    activeCard === index ? "transform scale-110" : ""
+                  )}>
+                    <div className={cn(
+                      "transition-all duration-500",
+                      activeCard === index ? "transform scale-125" : ""
+                    )}>
+                      {skill.icon}
+                    </div>
+                    <h3 className={cn(
+                      "text-2xl font-semibold text-black dark:text-white ml-4 transition-all duration-500",
+                      activeCard === index ? "text-3xl" : ""
+                    )}>
+                      {skill.title}
+                    </h3>
+                  </div>
+                  <div className="space-y-4">
+                    <p className={cn(
+                      "text-lg text-black dark:text-gray-400 transition-all duration-500",
+                      activeCard === index ? "text-xl font-medium" : ""
+                    )}>
+                      {skill.tech}
+                    </p>
+                    <p className={cn(
+                      "text-gray-800 dark:text-gray-400 transition-all duration-500",
+                      activeCard === index ? "text-lg leading-relaxed" : ""
+                    )}>
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex left-0" />
+          <CarouselNext className="hidden md:flex right-0" />
+        </Carousel>
       </div>
     </section>
   );

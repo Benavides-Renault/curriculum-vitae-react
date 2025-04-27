@@ -1,0 +1,58 @@
+.skill-card {
+	transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.language-progress-container {
+	position: relative;
+	padding-top: 10px;
+	overflow-x: auto;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.language-progress-container::-webkit-scrollbar {
+	height: 6px;
+}
+
+.language-progress-container::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.language-progress-container::-webkit-scrollbar-thumb {
+	background-color: rgba(156, 163, 175, 0.5);
+	border-radius: 20px;
+}
+
+.language-item {
+	position: relative;
+	transition: all 0.3s ease;
+	min-width: 150px;
+	margin-right: 20px;
+}
+
+.language-item:hover {
+	transform: translateY(-3px);
+}
+
+.language-name {
+	font-weight: 500;
+	white-space: nowrap;
+	margin-bottom: 4px;
+}
+
+.language-level {
+	font-size: 0.85rem;
+	white-space: nowrap;
+	opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+	.language-item {
+		min-width: 120px;
+	}
+}

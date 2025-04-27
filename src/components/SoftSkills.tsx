@@ -1,4 +1,3 @@
-
 import { Brain, Users, Presentation, Lightbulb, Clock, MessageSquare, Puzzle, Handshake, ShieldCheck, Target, Award, Flame } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import {
@@ -8,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface SoftSkillsProps {
   language: string;
@@ -287,7 +287,7 @@ const SoftSkills = ({ language }: SoftSkillsProps) => {
 
   return (
     <section id="soft-skills" className="container mx-auto px-4 py-16 scroll-fade">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         {content.title}
       </h2>
       
@@ -297,21 +297,22 @@ const SoftSkills = ({ language }: SoftSkillsProps) => {
             align: "start",
             loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {content.skills.map((skill, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/4 lg:basis-1/4">
                 <div 
                   className={`h-full p-6 rounded-lg border border-border bg-card shadow-sm transition-all duration-300 skill-card ${
                     hoveredSkill === index ? 'scale-105 shadow-lg border-primary' : 'hover:shadow-md'
                   }`}
                   onMouseEnter={() => setHoveredSkill(index)}
                   onMouseLeave={() => setHoveredSkill(null)}
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                    transform: hoveredSkill === index ? 'translateY(-5px) scale(1.05)' : 'translateY(0) scale(1)'
-                  }}
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="transition-all duration-300" style={{ 
@@ -321,27 +322,16 @@ const SoftSkills = ({ language }: SoftSkillsProps) => {
                         hoveredSkill === index ? 'text-accent-foreground' : 'text-primary'
                       }`} />
                     </div>
-                    <h3 className="text-xl font-semibold">{skill.title}</h3>
+                    <h3 className="text-xl font-semibold text-black dark:text-white">{skill.title}</h3>
                   </div>
-                  <p className="text-muted-foreground">{skill.description}</p>
+                  <p className="text-gray-800 dark:text-white">{skill.description}</p>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-2 lg:left-4 bg-background/80 hover:bg-background" />
-          <CarouselNext className="right-2 lg:right-4 bg-background/80 hover:bg-background" />
+          <CarouselPrevious className="hidden md:flex bg-background/80 hover:bg-background" />
+          <CarouselNext className="hidden md:flex bg-background/80 hover:bg-background" />
         </Carousel>
-      </div>
-      
-      <div className="flex justify-center mt-6 gap-2">
-        <div className="flex space-x-1">
-          {content.skills.map((_, index) => (
-            <div
-              key={index}
-              className="h-2 w-2 rounded-full bg-muted transition-all duration-300 hover:bg-primary"
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

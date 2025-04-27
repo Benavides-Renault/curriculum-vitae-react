@@ -1,0 +1,40 @@
+.header-button {
+	@apply flex items-center justify-center px-3 py-2 rounded-md transition-all duration-200;
+}
+
+.lang-button {
+	@apply header-button text-black dark:text-white;
+}
+
+.theme-button {
+	@apply header-button text-black dark:text-white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.carousel-container {
+	position: relative;
+	overflow: visible;
+}
+
+.carousel-slide {
+	transition: transform 2s ease-in-out;
+}
+
+.carousel-indicators {
+	display: flex;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.carousel-indicator {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+}

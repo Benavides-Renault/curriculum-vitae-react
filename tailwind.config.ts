@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,7 +19,11 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: {
+          light: "#8E9196", // Neutral Gray for light mode borders
+          DEFAULT: "hsl(var(--border))",
+          dark: "#403E43" // Dark Purple for additional contrast
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -56,6 +59,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      borderWidth: {
+        '1': '1px',
+        '1.5': '1.5px'
       },
       borderRadius: {
         lg: "var(--radius)",

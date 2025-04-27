@@ -1,5 +1,6 @@
-
 import { Sword, Dumbbell, Tent, Music } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface ExtracurricularProps {
   language: string;
@@ -21,7 +22,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Training in Jiu-jitsu",
               "Boxing Experience"
             ],
-            image: "/images/activity-martial-arts.png"
+            image: "/img/deporte.jpg"
           },
           {
             icon: Dumbbell,
@@ -33,7 +34,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Experience in event organization",
               "Technical advice to other athletes"
             ],
-            image: "/images/activity-powerlifting.png"
+            image: "/img/Power.jpg"
           },
           {
             icon: Tent,
@@ -45,7 +46,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Participation in international events",
               "Mentor of new generations"
             ],
-            image: "/images/activity-scout.png"
+            image: "/img/Scouts.jpg"
           },
           {
             icon: Music,
@@ -57,7 +58,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Presentations at events",
               "Continuous musical training"
             ],
-            image: "/images/activity-music.png"
+            image: "/img/Musica.jpg"
           }
         ]
       },
@@ -74,7 +75,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Entrenamiento en Jiu-jitsu",
               "Experiencia en Boxeo"
             ],
-            image: "/images/activity-martial-arts.png"
+            image: "/img/deporte.jpg"
           },
           {
             icon: Dumbbell,
@@ -86,7 +87,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Experiencia en organización de eventos",
               "Asesoramiento técnico a otros atletas"
             ],
-            image: "/images/activity-powerlifting.png"
+            image: "/img/Power.jpg"
           },
           {
             icon: Tent,
@@ -98,7 +99,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Participación en eventos internacionales",
               "Mentor de nuevas generaciones"
             ],
-            image: "/images/activity-scout.png"
+            image: "/img/Scouts.jpg"
           },
           {
             icon: Music,
@@ -110,7 +111,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Presentaciones en eventos",
               "Formación musical continua"
             ],
-            image: "/images/activity-music.png"
+            image: "/img/Musica.jpg"
           }
         ]
       },
@@ -127,7 +128,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Formation en Jiu-jitsu",
               "Expérience en Boxe"
             ],
-            image: "/images/activity-martial-arts.png"
+            image: "/img/deporte.jpg"
           },
           {
             icon: Dumbbell,
@@ -139,7 +140,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Expérience en organisation d'événements",
               "Conseil technique à d'autres athlètes"
             ],
-            image: "/images/activity-powerlifting.png"
+            image: "/img/Power.jpg"
           },
           {
             icon: Tent,
@@ -151,7 +152,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Participation à des événements internationaux",
               "Mentor des nouvelles générations"
             ],
-            image: "/images/activity-scout.png"
+            image: "/img/Scouts.jpg"
           },
           {
             icon: Music,
@@ -163,7 +164,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Présentations lors d'événements",
               "Formation musicale continue"
             ],
-            image: "/images/activity-music.png"
+            image: "/img/Musica.jpg"
           }
         ]
       },
@@ -180,7 +181,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Training in Jiu-jitsu",
               "Erfahrung im Boxen"
             ],
-            image: "/images/activity-martial-arts.png"
+            image: "/img/deporte.jpg"
           },
           {
             icon: Dumbbell,
@@ -192,7 +193,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Erfahrung in der Veranstaltungsorganisation",
               "Technische Beratung für andere Athleten"
             ],
-            image: "/images/activity-powerlifting.png"
+            image: "/img/Power.jpg"
           },
           {
             icon: Tent,
@@ -204,7 +205,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Teilnahme an internationalen Veranstaltungen",
               "Mentor für neue Generationen"
             ],
-            image: "/images/activity-scout.png"
+            image: "/img/Scouts.jpg"
           },
           {
             icon: Music,
@@ -216,7 +217,7 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
               "Präsentationen bei Veranstaltungen",
               "Kontinuierliche musikalische Ausbildung"
             ],
-            image: "/images/activity-music.png"
+            image: "/img/Musica.jpg"
           }
         ]
       }
@@ -229,40 +230,58 @@ const Extracurricular = ({ language }: ExtracurricularProps) => {
 
   return (
     <section id="extracurricular" className="container mx-auto px-4 py-16 scroll-fade">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black dark:text-white">
         {content.title}
       </h2>
       
-      <div className="space-y-12">
-        {content.activities.map((activity, index) => (
-          <div 
-            key={index}
-            className="glass-card p-6 grid grid-cols-1 md:grid-cols-2 gap-8 transform transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <activity.icon className="w-8 h-8" />
-                <h3 className="text-2xl font-semibold">{activity.title}</h3>
-              </div>
-              <p className="text-gray-400">{activity.description}</p>
-              <ul className="space-y-2">
-                {activity.achievements.map((achievement, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span>{achievement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="order-first md:order-last flex items-center justify-center">
-              <img 
-                src={activity.image} 
-                alt={activity.title}
-                className="w-full h-[300px] object-contain rounded-lg"
-              />
-            </div>
-          </div>
-        ))}
+      <div className="relative">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            skipSnaps: false,
+            slidesToScroll: 1
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {content.activities.map((activity, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/3">
+                <div className="glass-card p-6 h-full transform transition-all duration-300 hover:scale-[1.02]">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <activity.icon className="w-8 h-8 text-black dark:text-white" />
+                      <h3 className="text-2xl font-semibold text-black dark:text-white">{activity.title}</h3>
+                    </div>
+                    <p className="text-gray-800 dark:text-white">{activity.description}</p>
+                    <ul className="space-y-2">
+                      {activity.achievements.map((achievement, idx) => (
+                        <li key={idx} className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-primary rounded-full" />
+                          <span className="text-gray-800 dark:text-white">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-4">
+                      <img 
+                        src={activity.image} 
+                        alt={activity.title}
+                        className="w-full h-[350px] object-contain rounded-lg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );

@@ -1,14 +1,12 @@
-
 import { Helmet } from "react-helmet";
 import Header from "../components/Header";
-import Projects from "../components/Projects";
+import AboutComponent from "../components/About";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 
-const Portfolio = () => {
+const About = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const [language, setLanguage] = useState('en');
-  const isEnglish = language === 'en';
+  const [language, setLanguage] = useState('es');
   
   useEffect(() => {
     // Check URL for language parameter
@@ -50,28 +48,24 @@ const Portfolio = () => {
   const getLanguageContent = (lang: string) => {
     const content = {
       en: {
-        title: "Portfolio - Orlando B.",
-        description: "View my portfolio projects",
-        heading: "My Portfolio",
-        subheading: "Here you can find a collection of my most notable projects. Each one represents unique challenges and solutions that I've developed throughout my professional career."
+        title: "About Me - Orlando B.",
+        description: "Learn more about me and my background",
+        heading: "About Me"
       },
       es: {
-        title: "Portafolio - Orlando B.",
-        description: "Ver mis proyectos de portafolio",
-        heading: "Mi Portafolio",
-        subheading: "Aquí puedes encontrar una colección de mis proyectos más destacados. Cada uno representa desafíos y soluciones únicas que he desarrollado a lo largo de mi carrera profesional."
+        title: "Sobre Mí - Orlando B.",
+        description: "Conoce más sobre mí y mi trayectoria",
+        heading: "Sobre Mí"
       },
       fr: {
-        title: "Portfolio - Orlando B.",
-        description: "Voir mes projets de portfolio",
-        heading: "Mon Portfolio",
-        subheading: "Vous pouvez trouver ici une collection de mes projets les plus remarquables. Chacun représente des défis et des solutions uniques que j'ai développés tout au long de ma carrière professionnelle."
+        title: "À Propos - Orlando B.",
+        description: "En savoir plus sur moi et mon parcours",
+        heading: "À Propos"
       },
       de: {
-        title: "Portfolio - Orlando B.",
-        description: "Meine Portfolio-Projekte ansehen",
-        heading: "Mein Portfolio",
-        subheading: "Hier finden Sie eine Sammlung meiner bemerkenswertesten Projekte. Jedes repräsentiert einzigartige Herausforderungen und Lösungen, die ich im Laufe meiner beruflichen Laufbahn entwickelt habe."
+        title: "Über Mich - Orlando B.",
+        description: "Erfahren Sie mehr über mich und meinen Hintergrund",
+        heading: "Über Mich"
       }
     };
     
@@ -81,30 +75,26 @@ const Portfolio = () => {
   const content = getLanguageContent(language);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>{content.title}</title>
         <meta name="description" content={content.description} />
       </Helmet>
       
-      <Header isEnglish={isEnglish} setIsEnglish={() => {}} darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Header language={language} setLanguage={setLanguage} darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white">
             {content.heading}
           </h1>
-          <p className="text-lg text-gray-800 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
-            {content.subheading}
-          </p>
-          
-          <Projects isEnglish={isEnglish} />
+          <AboutComponent language={language} />
         </div>
       </main>
       
-      <Footer isEnglish={isEnglish} />
+      <Footer isEnglish={language === 'en'} />
     </div>
   );
 };
 
-export default Portfolio;
+export default About;

@@ -1,9 +1,24 @@
-
 import { Book, Terminal, Briefcase, Award } from "lucide-react";
 
-const About = ({ language }) => {
-  const getLanguageContent = (lang) => {
-    const content = {
+interface AboutProps {
+  language: string;
+}
+
+const About: React.FC<AboutProps> = ({ language }) => {
+  const getLanguageContent = (lang: string) => {
+    const content: Record<string, {
+      title: string;
+      bio1: string;
+      bio2: string;
+      education: string;
+      educationDetail: string;
+      development: string;
+      developmentDetail: string;
+      experience: string;
+      experienceDetail: string;
+      projects: string;
+      projectsDetail: string;
+    }> = {
       en: {
         title: "About Me",
         bio1: "I am a passionate scientist and developer with experience in industrial automation and web development. My academic background in physics and my programming experience allow me to approach complex problems from multiple perspectives.",
@@ -100,10 +115,10 @@ const About = ({ language }) => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <img src="/images/about-image-1.png" alt="About 1" className="w-full h-48 object-cover rounded-lg glass-card" />
-          <img src="/images/about-image-2.png" alt="About 2" className="w-full h-48 object-cover rounded-lg glass-card" />
-          <img src="/images/about-image-3.png" alt="About 3" className="w-full h-48 object-cover rounded-lg glass-card" />
-          <img src="/images/about-image-4.png" alt="About 4" className="w-full h-48 object-cover rounded-lg glass-card" />
+          <img src="/img/hero.jpg" alt="About 1" className="w-full h-48 object-cover rounded-lg glass-card" />
+          <img src="/img/yo_2.jpg" alt="About 2" className="w-full h-48 object-cover rounded-lg glass-card" />
+          <img src="/img/yo_3.jpg" alt="About 3" className="w-full h-48 object-cover rounded-lg glass-card" />
+          <img src="/img/yo_4.jpg" alt="About 4" className="w-full h-48 object-cover rounded-lg glass-card" />
         </div>
       </div>
     </section>

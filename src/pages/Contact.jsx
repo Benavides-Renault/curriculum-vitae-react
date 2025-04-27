@@ -1,13 +1,13 @@
-
 import { Helmet } from "react-helmet";
 import Header from "../components/Header";
-import AboutComponent from "../components/About";
+import ContactComponent from "../components/Contact";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
 
-const About = () => {
+const Contact = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguage] = useState('en');
+  const isEnglish = language === 'en';
   
   useEffect(() => {
     // Check URL for language parameter
@@ -49,24 +49,24 @@ const About = () => {
   const getLanguageContent = (lang: string) => {
     const content = {
       en: {
-        title: "About Me - Orlando B.",
-        description: "Learn more about me and my background",
-        heading: "About Me"
+        title: "Contact Me - Orlando B.",
+        description: "Get in touch with me",
+        heading: "Contact Me"
       },
       es: {
-        title: "Sobre Mí - Orlando B.",
-        description: "Conoce más sobre mí y mi trayectoria",
-        heading: "Sobre Mí"
+        title: "Contáctame - Orlando B.",
+        description: "Ponte en contacto conmigo",
+        heading: "Contáctame"
       },
       fr: {
-        title: "À Propos - Orlando B.",
-        description: "En savoir plus sur moi et mon parcours",
-        heading: "À Propos"
+        title: "Contactez-moi - Orlando B.",
+        description: "Entrer en contact avec moi",
+        heading: "Contactez-moi"
       },
       de: {
-        title: "Über Mich - Orlando B.",
-        description: "Erfahren Sie mehr über mich und meinen Hintergrund",
-        heading: "Über Mich"
+        title: "Kontaktiere Mich - Orlando B.",
+        description: "Nehmen Sie Kontakt mit mir auf",
+        heading: "Kontaktiere Mich"
       }
     };
     
@@ -82,20 +82,20 @@ const About = () => {
         <meta name="description" content={content.description} />
       </Helmet>
       
-      <Header language={language} setLanguage={setLanguage} darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Header isEnglish={isEnglish} setIsEnglish={() => {}} darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-black dark:text-white">
             {content.heading}
           </h1>
-          <AboutComponent language={language} />
+          <ContactComponent isEnglish={isEnglish} />
         </div>
       </main>
       
-      <Footer isEnglish={language === 'en'} />
+      <Footer isEnglish={isEnglish} />
     </div>
   );
 };
 
-export default About;
+export default Contact;

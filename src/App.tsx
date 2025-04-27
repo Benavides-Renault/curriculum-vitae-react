@@ -1,25 +1,27 @@
-
 import { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import TechnicalSkills from "./components/TechnicalSkills";
-import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import NotFound2 from "./pages/NotFound2";
 import Extracurricular from "./components/Extracurricular";
 import SoftSkills from "./components/SoftSkills";
+import Projects from "./components/Projects"; // Add this import
 
 const queryClient = new QueryClient();
 
+interface ContentWrapperProps {}
+
 const App = () => {
-  const [language, setLanguage] = useState('es'); // Default to Spanish
+  const [language, setLanguage] = useState<'en' | 'es' | 'fr' | 'de'>('es'); // Default to Spanish
   const [darkMode, setDarkMode] = useState(true);
   
   useEffect(() => {
@@ -49,14 +51,14 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const ContentWrapper = () => {
+  const ContentWrapper: React.FC<ContentWrapperProps> = () => {
     const location = useLocation();
     
     // Extract language from path if available
     useEffect(() => {
       const pathLang = location.pathname.split('/')[1];
       if (['en', 'es', 'fr', 'de'].includes(pathLang)) {
-        setLanguage(pathLang);
+        setLanguage(pathLang as 'en' | 'es' | 'fr' | 'de');
       }
     }, [location]);
     
@@ -75,8 +77,8 @@ const App = () => {
           <About language={language} />
           <TechnicalSkills language={language} />
           <SoftSkills language={language} />
-          <Extracurricular language={language} />
           <Projects language={language} />
+          <Extracurricular language={language} />
           <Contact language={language} />
         </main>
         <Footer language={language} />
