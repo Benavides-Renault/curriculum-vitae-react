@@ -105,7 +105,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             downloadUrl: '#',
           },
           {
-            title: 'Smart Home Dashboard',
+            title: 'Smart Home Dashboard - in progress',
             description:
               'Centralized dashboard for smart home devices with automation rules, energy consumption tracking, and mobile app integration.',
             icon: Building,
@@ -175,7 +175,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             downloadUrl: '#',
           },
           {
-            title: 'Panel de Control para Hogar Inteligente',
+            title: 'Panel de Control para Hogar Inteligente - en progreso',
             description:
               'Panel centralizado para dispositivos de hogar inteligente con reglas de automatización, seguimiento del consumo de energía e integración de aplicaciones móviles.',
             icon: Building,
@@ -245,7 +245,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             downloadUrl: '#',
           },
           {
-            title: 'Tableau de Bord Maison Intelligente',
+            title: 'Tableau de Bord Maison Intelligente - en cours',
             description:
               "Tableau de bord centralisé pour les appareils domestiques intelligents avec règles d'automatisation, suivi de la consommation d'énergie e intégration d'applications mobiles.",
             icon: Building,
@@ -315,7 +315,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             downloadUrl: '#',
           },
           {
-            title: 'Smart Home Dashboard',
+            title: 'Smart Home Dashboard - im Gange',
             description:
               'Zentralisiertes Dashboard für Smart-Home-Geräte mit Automatisierungsregeln, Energieverbrauchsverfolgung und mobiler App-Integration.',
             icon: Building,
